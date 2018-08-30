@@ -1,0 +1,372 @@
+@CHARSET 'UTF-8';
+@import "_mixin.scss";
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Lucida Grande','Verdana','Arial','Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W6','メイリオ','Meiryo','MS P Gothic','ＭＳ Ｐゴシック',Osaka,sans-serif;
+	text-align: center;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	height: 100%;
+}
+
+.flex_box {
+	display: flex;
+}
+
+.inner {
+	max-width: 1400px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+a {
+	color: #fff;
+}
+
+.pc_display {
+	display: block !important;
+}
+
+.sp_display {
+	display: none !important;
+}
+/*------------------------------------ title*/
+h2.title_heading {
+	padding: 60px 0;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	font-size: 3.0rem;
+	letter-spacing: 0.1em;
+}
+/*------------------------------------ header-----------------------------------*/
+header {
+	height: 100vh;
+	background: url("../img/home/head_bg.jpg") no-repeat center/cover;
+	position: relative;
+
+	#logo {
+		padding: 50px 0 37px;
+	}
+
+	#nav_global {
+		.nav_btn {
+			display: none;
+		}
+
+		ul {
+			max-width: 1200px;
+			margin: auto;
+			padding: 37px 10px;
+			display: flex;
+			justify-content: space-between;
+
+			li {
+				a {
+					font-size: 1.6rem;
+					letter-spacing: 0.1em;
+					font-family: 'Montserrat', sans-serif;
+					word-wrap: break-word;
+					@include transition();
+					&:hover {
+						color: #c85c23;
+					}
+				}
+			}
+		}
+	}
+
+	.main_txt {
+		position: absolute;
+		width: 100%;
+		bottom: 20%;
+		@scale(1.1);
+	}
+}
+/*------------------------------------ footer-----------------------------------*/
+
+footer {
+	position: relative;
+	background: url("../img/common/foot_bg.jpg");
+
+	.page_top {
+		position: absolute;
+		top: -3%;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+
+	.footer {
+		&_logo {
+			padding: 80px 0 40px;
+		}
+
+		&_nav {
+			display: inline-block;
+			text-align: center;
+
+			li {
+				display: inline-block;
+				vertical-align: middle;
+				margin: 0 2.1em;
+				font-size: 1.4rem;
+				font-family: 'Montserrat', sans-serif;
+				letter-spacing: 0.1em;
+				text-align: center;
+
+				a {
+					color: #151f29;
+				}
+			}
+		}
+
+		&_branch {
+			justify-content: center;
+			margin: 0 auto;
+			padding: 100px 0 50px;
+			border-bottom: 1px solid #151f29;
+
+			.flex_box {
+				flex-flow: row wrap;
+				max-width: 784px;
+				margin: 0 auto;
+
+				li {
+					width: 33.33%;
+					padding: 15px 0;
+					img:hover {
+						opacity: 0.7;
+					}
+				}
+			}
+		}
+
+		&_copy {
+			padding: 50px 0;
+			border-top: 1px solid #919aa4;
+			color: #fff;
+			font-size: 1.4rem;
+			font-family: 'Montserrat', sans-serif;
+			letter-spacing: 0.1em;
+		}
+	}
+}
+/*-----------------------------------  buton -----------------------------------*/
+
+.button_wrap {
+	padding: 10% 0;
+	background: $black;
+}
+
+button {
+	cursor: pointer;
+	appearance: none;
+	background-color: #333;
+	border: 1px solid #333;
+}
+
+.btn_more {
+	position: relative;
+	display: inline-block;
+	padding: 1.2em 0.5em;
+	vertical-align: middle;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 2.0rem;
+	color: #fff;
+	width: 83%;
+	@include border-radius(5px);
+}
+
+.btn_more:after {
+	border-top: 1px solid #fff;
+	border-right: 1px solid #fff;
+	content: ' ';
+	position: absolute;
+	top: 40%;
+	right: 12.565%;
+	width: 10px;
+	height: 10px;
+	@include transform(rotate(135deg));
+}
+
+.button_wrap .active:after {
+	@include transform(rotate(-45deg));
+}
+
+.btn {
+	height: 54px;
+	line-height: 54px;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+}
+
+.btn::after,
+.btn::before {
+	position: absolute;
+	z-index: -1;
+	display: block;
+	content: '';
+}
+
+.btn,
+.btn::after,
+.btn::before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.white_btn {
+	position: relative;
+
+	&::after {
+		content: ' ';
+		right: 12.565%;
+		width: 1.0rem;
+		height: 1.0rem;
+		border-top: 1px solid #3f3f3f;
+		border-right: 1px solid #3f3f3f;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+		position: absolute;
+		z-index: 10;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		vertical-align: middle;
+	}
+
+	a {
+		background: $white;
+		border: 1px solid $black;
+		color: $black;
+		display: block;
+		width: 100%;
+		font-size: 1.4rem;
+		font-family: 'Montserrat', sans-serif;
+		@include border-radius(5px);
+		position: relative;
+		z-index: 2;
+
+		&:hover {
+			background-color: #fff;
+			border-color: #afcadb;
+		}
+
+		&::after,
+		&::before {
+			top: 0;
+			width: 50%;
+			height: 100%;
+			background-color: #fff;
+		}
+
+		&::before {
+			right: 0;
+		}
+
+		&::after {
+			left: 0;
+		}
+
+		&:hover::after,
+		&:hover::before {
+			width: 0;
+			background-color: #afcadb;
+		}
+	}
+}
+
+.hover_effect {
+	position: relative;
+	display: block;
+
+	.hover-txt {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		@include transition();
+
+		span {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 80%;
+			@include transform(translate(-50%, -50%));
+		}
+	}
+
+	&:hover {
+		.hover-txt {
+			opacity: 1;
+		}
+
+		.hover-img {
+			@include transition();
+			@include scale(1.1);
+		}
+	}
+}
+
+.se-pre-con {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 999999;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.lds-hourglass {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 64px;
+	height: 64px;
+}
+
+.lds-hourglass:after {
+	content: " ";
+	display: block;
+	border-radius: 50%;
+	width: 0;
+	height: 0;
+	margin: 6px;
+	box-sizing: border-box;
+	border: 26px solid #fff;
+	border-color: #fff transparent #fff transparent;
+	animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+	0% {
+		transform: rotate(0);
+		animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
+
+	50% {
+		transform: rotate(900deg);
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+
+	100% {
+		transform: rotate(1800deg);
+	}
+}
