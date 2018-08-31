@@ -36,6 +36,7 @@ a {
 	display: none !important;
 }
 /*------------------------------------ title*/
+
 h2.title_heading {
 	padding: 60px 0;
 	font-family: 'Montserrat', sans-serif;
@@ -44,6 +45,7 @@ h2.title_heading {
 	letter-spacing: 0.1em;
 }
 /*------------------------------------ header-----------------------------------*/
+
 header {
 	height: 100vh;
 	background: url("../img/home/head_bg.jpg") no-repeat center/cover;
@@ -54,6 +56,8 @@ header {
 	}
 
 	#nav_global {
+		@include transition();
+
 		.nav_btn {
 			display: none;
 		}
@@ -72,11 +76,25 @@ header {
 					font-family: 'Montserrat', sans-serif;
 					word-wrap: break-word;
 					@include transition();
+
 					&:hover {
 						color: #c85c23;
 					}
 				}
 			}
+		}
+	}
+
+	.fixed {
+		position: fixed;
+		z-index: 99999;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.7);
+
+		ul {
+			padding: 25px 10px !important;
 		}
 	}
 
@@ -88,7 +106,6 @@ header {
 	}
 }
 /*------------------------------------ footer-----------------------------------*/
-
 footer {
 	position: relative;
 	background: url("../img/common/foot_bg.jpg");
@@ -99,6 +116,7 @@ footer {
 		left: 0;
 		width: 100%;
 		text-align: center;
+
 		&:hover {
 			opacity: 0.7;
 		}
@@ -142,6 +160,7 @@ footer {
 				li {
 					width: 33.33%;
 					padding: 15px 0;
+
 					img:hover {
 						opacity: 0.7;
 					}
@@ -160,7 +179,6 @@ footer {
 	}
 }
 /*-----------------------------------  buton -----------------------------------*/
-
 .button_wrap {
 	padding: 10% 0;
 	background: $black;

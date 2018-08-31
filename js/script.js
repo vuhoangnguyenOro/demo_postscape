@@ -1,5 +1,16 @@
 (function($) {
+  //loading icon
    $(".se-pre-con").fadeOut("slow");
+  //fixed nav
+  $(window).scroll(function(){
+    var scrollTop = $(window).scrollTop();
+    if ( scrollTop > 150 ) {
+      $("#nav_global").addClass("fixed");
+    }
+    else {
+      $("#nav_global").removeClass("fixed");
+    }
+  });
   // nav sp
   $(".nav_btn").on("click", function() {
     $(this).toggleClass('nav_btn_actived');
