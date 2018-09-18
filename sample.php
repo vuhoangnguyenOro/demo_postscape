@@ -17,7 +17,7 @@
 <body>
 <div id="wrapper">
 	<?php include('inc/header.php');?>
-	<div id="content">
+	<div id="content">FORK
 	</div>
 	<!-- end content-->
 <?php include('inc/footer.php');?>
