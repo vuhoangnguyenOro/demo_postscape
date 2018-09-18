@@ -5,6 +5,8 @@
     display: none !important; }
   .sp_display {
     display: block !important; }
+  header .fixed {
+    position: static; }
   header #nav_global .nav_btn {
     display: block;
     height: 32px;

@@ -11,6 +11,9 @@
   }
 
   header {
+    .fixed {
+      position: static;
+    }
     #nav_global {
       .nav_btn {
         display: block;
